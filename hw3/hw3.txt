@@ -1,0 +1,43 @@
+// Alexander Powell
+// Computer Organization
+
+hw3.txt
+
+# 2: Assembly Basics
+
+a) 0x08048a37
+
+b) 0x000000c4
+
+c) 0x08048a6b
+
+d) 0x08048a79
+
+e) 0x08048a7e
+
+f) 0x08048a37
+
+g) 0x1136ce7ad
+
+h) 0xdc5b2ea
+
+i) 0x3a2df8a7
+
+j) 0x08048c92
+
+# 3: Assembly Code
+
+The following is the assembly code for the given C program:
+
+movl 8(%ebp), %eax
+mov1 12(%ebp), %edx
+cmpl %edx, %eax
+jg .L6
+addl %edx, %eax
+movl %eax, %edx
+jmp .L8
+.L6
+subl %edx, %eax
+imull $2, %eax
+movl %eax, %edx
+.L8

@@ -1,0 +1,35 @@
+1. Call by value:
+
+
+
+2. Assembly Code:
+	2)
+		The assembly code shown corresponds to the function fun3.  
+	3)
+		The assembly code shown corresponds to the function fun6.  
+	4)
+	
+		The C code for the given assembly code can be written as:
+
+		int loop(int x, int y)
+		{
+			int i;
+			int r = 1;
+			for (i = x; y < i; i--)
+			{
+				r = i + r;
+			}
+			return r;
+		}
+
+	5)
+
+	fun7 corresponds to choice4.
+	fun8 corresponds to choice5.
+	fun9 corresponds to choice1.
+
+
+	5)
+
+
+	// bomb lab: first number cannot be 1.  second 2 numbers have to multiply to 24.

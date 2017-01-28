@@ -1,0 +1,97 @@
+// Alexander Powell
+// HW 8
+// 4/28/2015
+
+1)
+
+40-bit virtual byte address
+16 KB pages
+36 bit physical byte address 
+
+	(1) 2^26 * 26 bits = 208 MB
+	(2) find rightmost 14 bits of 0x123456789a with 0x34 added to front
+
+	solution:
+	Physical Address: 0xd389a
+	(3) VPN = take leftmost 26 bits of 0x123456789a -> 0x48D159
+	set number = 128/4 = 32 = 2^5 so 5 index bits
+	remaining 21 bits are tag bits (21+5=26)
+	whole string is 0x48D159 plus 2 binary 0s in front
+
+	solution:
+	so index bits = 0b11001
+	and tag bits = 0b000100100011010001010
+	(4) 
+	256/8 = 32 = 2^5 so 5 index bits
+	also 5 offset bits because b = log_2(B)
+	36 - 14 = 22
+	22 - 10 = 12 so 12 tag bits
+
+	solution:
+	offset = 0b11010
+	index = 0b00100
+	tag = 0b001101001110
+
+2)
+	(1) a) After a page fault, the current instruction may be re-executed.
+		b) After a trap, the next instruction may be executed.
+		c) The running process may be aborted.  
+
+	(2) The first thing that will happen is there will be a TLB miss, so it goes to the page table.  Then the VPN (virtual page number) will check the valid bit and in the case that it is a 0, a page fault will occur.  Then it goes to the disk to fetch data.  If the page is full there will be an eviction using lru.  If it's not full yet, it will be put into the page.  
+
+3)
+	(1) 
+	#define MAX_NAME_LEN 127
+	typedef struct {
+	    char name[MAX_NAME_LEN + 1];
+	    unsigned long sid;
+	} Student;
+
+	/* return the name of student s */
+	const char* getName (const Student* s) {
+	    return s->name;
+	}
+
+	/* set the name of student s
+	If name is too long, cut off characters after the maximum number of characters allowed.
+	*/
+	void setName(Student* s, const char* name) {
+		char *sptr = s->name;
+		const char *nptr = name;
+		int index = 0;
+		while (*nptr != '\0')
+		{
+			if (index > MAX_NAME_LEN)
+			{
+				sptr[index] = '\0';
+				break;
+			}
+			*(sptr + index) = *nptr;
+			nptr++;
+			index++;
+		}
+	}
+
+	/* return the SID of student s */
+	unsigned long getStudentID(const Student* s) {
+		return (s -> sid);
+	}
+
+	/* set the SID of student s */
+	void setStudentID(Student* s, unsigned long sid) {
+		s -> sid = sid;
+	}
+
+	(2) This is a logical error because since the variable s of type student is declared within the function, it won't be able to return s.  
+
+
+Programming Assignments
+
+1) See vector.c
+
+2) ll.c
+		In the given implementation of the linked list, a change is needed in the new node method.  The malloc call should be increased by 1.  That is, the line:
+		node->value = malloc(strlen(value));
+		should change to 
+		node->value = malloc(strlen(value) + 1);
+

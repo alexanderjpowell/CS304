@@ -1,0 +1,43 @@
+Alexander Powell
+
+(1) In decimal representation:
+num1 = 128+64+32+8+4+1 = 237
+num2 = 128
+
+(2) In two's complement:
+num1 -> 11101101 -> 00010010 + 1 = 00010011 = 1+2+16 = 19 -> -19
+num2 -> 10000000 -> 01111111 + 1 = 10000000 = 128 -> -128
+
+(3) 4 Byte Two's complement with hex:
+157 in Hex -> 0000009D
+-157 in Hex -> FFFFFF63
+
+(5) Binary to Decimal:
+10001001 in decimal = 1+8+128 = 137
+in Hex = 89
+
+(6) Decimal to Binary:
+35 in binary = 00100011
+in Hex = 23
+
+(7) Two's Complement Addition:
+
+(a)
+(-122)+(-111) = -233
+-122 in Two's complement: 10000110
+-111 in Two's complement: 10010001
+10000110 + 10010001 = 00010111 (23) There is overflow because two negative numbers cannot
+sum to a positive number.  
+
+(b)
+(111)+(122) = 233
+111 in Two's complement: 01101111
+122 in Two's complement: 01111010
+01101111 + 01111010 = 11101001 (-23) Again, this is overflow because two positive numbers 
+cannot sum to a negative number.  
+
+(c)
+(111)-(122) = -11 which can be written as (111)+(-122) = -11
+ 111 in Two's complement: 01101111
+-122 in Two's complement: 10000110
+01101111 + 10000110 = 11110101 (-11) There is no overflow here.  

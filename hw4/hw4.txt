@@ -1,0 +1,62 @@
+// Alexander Powell
+// Computer Organization
+// HW 4
+// hw4.txt
+
+PROBLEM 1:
+
+The pointer based assembly code for the program is written below:
+
+void shift(int *a[], int n)
+{
+  int i;
+  for (i = 0; i != n-1; i++)
+  {
+    a[i] = a[i+1];
+  }
+}
+
+PROBLEM 2:
+
+The following are the values for temp and ptr:
+
+blocks = 0x4680
+ptr = 0x4672
+temp = 0x4671
+
+temp = 0x4671
+temp = 0x4671
+temp = 0x4671
+temp = 0x4671
+
+ptr = 0x4672
+temp = 0x4671
+temp = 0x4671
+
+ptr = 0x4672
+ptr = 0x4672, temp = 0x4671
+ptr = 0x4672, temp = 0x4671
+ptr = 0x4672, temp = 0x4671
+temp = 0x4671
+
+PROBLEM 3:
+
+The stack for the given program is represented as shown below:
+
+Stack:
+
+address       content
+0xbf9d191c    
+0xbf9d1918    0xbf9d1968
+0xbf9d1914    0x00000021
+0xbf9d1910    0x0000002c
+0xbf9d190c    0x00000037
+
+0xbf9d18e4    0xbf9d190c
+0xbf9d18e0    0x08048412
+0xbf9d18dc    0xbf9d1918
+
+PROBLEM 4:
+
+The following three numbers diffuse the bomb successfully:
+2 4 6

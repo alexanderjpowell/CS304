@@ -1,0 +1,39 @@
+// Alexander Powell
+// HW2 - hw2.txt
+
+Problem 3: Floating Point
+
+1) Floating point representation of -213:
+
+1 10000110 10101010000000000000000
+
+2)
+(a) 0x00000000
+-> 0 00000000 00000000000000000000000
+-> In decimal notation, this is converted to 0
+
+(b) 0xBF800000 
+-> 1 01111111 00000000000000000000000
+-> In decimal notation, this is converted to -1
+
+(c) 0x44802000
+-> 0 10001001 00000000010000000000000
+-> In decimal notation, this is converted to 1025
+
+
+Problem 4: Values of i and j
+
+Line 1: I is: 5 and J is 5
+Line 2: I is: 5 and J is 0
+Line 3: I is: 6 and J is 6
+Line 4: I is: 5 and J is 6
+Line 5: I is: 5 and J is 6
+Line 6: I is: 5 and J is 6
+Line 7: I is: 3 and J is 6
+Line 8: I is: 3 and J is 4
+Line 9: I is: 8 and J is 4
+Line 10:I is: 8 and J is 9
+Line 11:I is: 9 and J is 9
+Line 12:I is: 9 and J is 10
+Line 13:I is: 9 and J is 10
+Line 14:I is: 8 and J is 10
